@@ -5,10 +5,57 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>cssMemSlider</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+	<div class="slider-wrapper">
+		<input type="radio" name="r" id="r1" checked>
+		<input type="radio" name="r" id="r2">
+		<input type="radio" name="r" id="r3">
+		<input type="radio" name="r" id="r4">
+		<input type="radio" name="r" id="r5">
+
+		<div class="slider">
+			<div class="slides">
+				<div class="slide s1"><img src="./img/1_cr.jpg" alt="1"></div>
+				<div class="slide"><img src="./img/2_cr.jpg" alt="2"></div>
+				<div class="slide"><img src="./img/3_cr.jpg" alt="1"></div>
+				<div class="slide"><img src="./img/4_cr.jpg" alt="1"></div>
+				<div class="slide"><img src="./img/5_cr.jpg" alt="1"></div>
+			</div>
+		</div>
+
+		<div class="text-wrapper">
+			<div class="text">
+				<div class="slide-text s2">Ох уж этот pure css)))</div>
+				<div class="slide-text">RSSchool</div>
+				<div class="slide-text">cssMemSlider</div>
+				<div class="slide-text">Doctors: Googling stuff online does not make you a doctor.</div>
+				<div class="slide-text">People learning JavaScript: 'I'll use array.sort() to sort this list of numbers!'
+				</div>
+			</div>
+		</div>
+
+		<div class="navigation">
+			<label for="r1" id="label-1" class="label-dot">
+				<div class="dot"></div>
+			</label>
+			<label for="r2" id="label-2" class="label-dot">
+				<div class="dot"></div>
+			</label>
+			<label for="r3" id="label-3" class="label-dot">
+				<div class="dot"></div>
+			</label>
+			<label for="r4" id="label-4" class="label-dot">
+				<div class="dot"></div>
+			</label>
+			<label for="r5" id="label-5" class="label-dot">
+				<div class="dot"></div>
+			</label>
+		</div>
+	</div>
 
 </body>
 
