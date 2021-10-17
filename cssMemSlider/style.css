@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .slider-wrapper {
   max-width: 50%;
@@ -16,6 +17,7 @@ body {
     'slider slider'
     'text bullets';
   grid-template-columns: 4fr 1fr;
+  gap: 0;
 }
 input[name='r'] {
   display: none;
@@ -51,7 +53,7 @@ input[name='r'] {
   grid-area: slider;
   width: 100%;
   overflow: hidden;
-  border: 0.5rem solid white;
+  /* border: 0.5rem solid white; */
 }
 
 .slides {
@@ -133,7 +135,7 @@ input[name='r'] {
 
 @media (max-width: 1350px) {
   .slider-wrapper {
-    max-width: 70%;
+    max-width: 60%;
     grid-template-columns: 3fr 1fr;
   }
   .slide-text {
@@ -147,6 +149,12 @@ input[name='r'] {
     height: 0.8rem;
   }
 }
+@media (max-width: 1000px) {
+  .slider-wrapper {
+    max-width: 70%;
+    grid-template-columns: 5fr 2fr;
+  }
+}
 @media (max-width: 700px) {
   .slider-wrapper {
     max-width: 90%;
@@ -155,7 +163,7 @@ input[name='r'] {
       'slider slider'
       'bullets bullets'
       'text text';
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr;
   }
   .navigation {
     justify-self: center;
