@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(90, 88, 88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-wrapper {
+  max-width: 50%;
+  display: grid;
+  grid-template-areas:
+    'slider slider'
+    'slider slider'
+    'text bullets';
+  grid-template-columns: 4fr 1fr;
+}
+input[name='r'] {
+  display: none;
+}
+
+/* Текст */
+
+.text-wrapper {
+  margin-top: 0.5rem;
+  grid-area: text;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.text {
+  flex: 1 1 auto;
+  overflow: hidden;
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+.slide-text {
+  color: white;
+  font-size: 2rem;
+  width: 20%;
+  transition: all 0.3s ease 0s;
+}
+
+/* Слайды картинки */
+
+.slider {
+  grid-area: slider;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 0.5rem solid white;
+}
+
+.slides {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+.slide {
+  width: 20%;
+  transition: all 0.3s ease 0s;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+#r1:checked ~ .slider .slides .s1,
+#r1:checked ~ .text-wrapper .text .s2 {
+  margin-left: 0;
+}
+#r2:checked ~ .slider .slides .s1,
+#r2:checked ~ .text-wrapper .text .s2 {
+  margin-left: -20%;
+}
+#r3:checked ~ .slider .slides .s1,
+#r3:checked ~ .text-wrapper .text .s2 {
+  margin-left: -40%;
+}
+#r4:checked ~ .slider .slides .s1,
+#r4:checked ~ .text-wrapper .text .s2 {
+  margin-left: -60%;
+}
+#r5:checked ~ .slider .slides .s1,
+#r5:checked ~ .text-wrapper .text .s2 {
+  margin-left: -80%;
+}
+
+/* Навигация */
+.navigation {
+  grid-area: bullets;
+  justify-self: self-end;
+}
+.label-dot {
+  display: inline-block;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-top: 0.5rem;
+}
+.label-dot:not(:last-child) {
+  margin-right: 0.6rem;
+}
+
+.dot {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  background: #ccc;
+  opacity: 0.7;
+  transform: skew(-25deg, 0deg);
+  transition: all 0.5s;
+  opacity: 0.7;
+}
+.label-dot:hover .dot {
+  background-color: #fff;
+  opacity: 1;
+}
+.label-dot:active .dot {
+  background-color: #000;
+}
+
+#r1:checked ~ .navigation #label-1 .dot,
+#r2:checked ~ .navigation #label-2 .dot,
+#r3:checked ~ .navigation #label-3 .dot,
+#r4:checked ~ .navigation #label-4 .dot,
+#r5:checked ~ .navigation #label-5 .dot {
+  background-color: rgb(47, 47, 47);
+}
+
+@media (max-width: 1350px) {
+  .slider-wrapper {
+    max-width: 70%;
+    grid-template-columns: 3fr 1fr;
+  }
+  .slide-text {
+    font-size: 1.5rem;
+  }
+  .label-dot:not(:last-child) {
+    margin-right: 0.4rem;
+  }
+  .dot {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+@media (max-width: 700px) {
+  .slider-wrapper {
+    max-width: 90%;
+    grid-template-areas:
+      'slider slider'
+      'slider slider'
+      'bullets bullets'
+      'text text';
+    grid-template-columns: 3fr 1fr;
+  }
+  .navigation {
+    justify-self: center;
+  }
+}
